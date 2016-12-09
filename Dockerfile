@@ -13,7 +13,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 # Install dependencies
 RUN apt-get update && \
-apt-get install -y git build-essential curl wget software-properties-common msttcorefonts
+apt-get install -y git build-essential curl wget software-properties-common
 
 # Install JDK 8
 RUN \
