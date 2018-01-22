@@ -24,6 +24,9 @@ apt-get install -y oracle-java8-installer wget unzip tar && \
 rm -rf /var/lib/apt/lists/* && \
 rm -rf /var/cache/oracle-jdk8-installer
 
+#set unlimited crypto policy (by default turned on in newer JDK version)
+RUN sed -i 's/#crypto.policy=unlimited/crypto.policy=unlimited/g' /usr/lib/jvm/java-8-oracle/jre/lib/security/java.security
+
 # Define commonly used JAVA_HOME variable
 ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
